@@ -1,0 +1,367 @@
+/*
+!Utilities Or Helper CSS
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+$primary-font: 'Manrope', sans-serif;
+$body-font-family: $primary-font;
+
+$font-size-base: 16px;
+
+/* Variable */
+$body-bg : #040C18;
+$white-color:white;
+/* Mixin Extends */
+
+@mixin media-break-width($media-width-min, $media-width-max) {
+  @media (min-width: #{$media-width-min}px) and (max-width: #{$media-width-max}px) {
+    transition: 0.5s; // animate when window resizing
+    @content;
+  }
+}
+@mixin max-media-width($media-width) {
+  @media all and (max-width: #{$media-width}px) {
+    transition: 0.5s; // animate when window resizing
+    @content;
+  }
+}
+@mixin min-media-width($media-width) {
+  @media all and (min-width: #{$media-width}px) {
+    transition: 0.5s;
+    // animate when window resizing      @content    :;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    @content;
+  }
+}
+
+/* Hover Transistion */
+@mixin hover-transition {
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+
+/* Custom scroll Bar */
+@mixin customScrollbar {
+  overflow-y: scroll;
+  /* width */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: rgba(153, 153, 153, 0.2);
+    border-radius: 5px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #f84f4f;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #74c247;
+    cursor: grab;
+  }
+}
+/* Custom Table scroll Bar */
+@mixin customScrollbarTable {
+  overflow-y: auto;
+  /* width */
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: rgba(153, 153, 153, 0.2);
+    border-radius: 5px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #f84f4f;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #74c247;
+    cursor: grab;
+  }
+}
+/* Custom scroll Bar Inner */
+@mixin customScrollbarInner {
+  overflow-y: scroll;
+  /* width */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: rgba(153, 153, 153, 0.2);
+    border-radius: 5px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #74c247;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #f84f4f;
+    cursor: grab;
+  }
+}
+@mixin Background-image() {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+/* ============ Layout =============== */
+.my-container {
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+  @include min-media-width(1400) {
+    max-width: 1320px;
+  }
+
+  @include media-break-width(1200, 1399) {
+    max-width: 1140px;
+  }
+  @include media-break-width(992, 1199) {
+    max-width: 960px;
+  }
+  @include media-break-width(768, 991) {
+    max-width: 720px;
+  }
+  @include media-break-width(575, 767) {
+    max-width: 540px;
+  }
+
+  @include max-media-width(575) {
+    max-width: 100%;
+  }
+}
+/* Common CSS */
+body {
+    color: $white-color;
+  background-color: $body-bg;
+  font-family: $body-font-family;
+  font-size: $font-size-base;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $primary-font;
+}
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #424c60;
+  @include max-media-width(767) {
+    font-size: 14px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+}
+img,
+svg {
+  max-width: 100%;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+:focus {
+  outline: none !important;
+}
+
+input:focus,
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 2px solid #2d9cdb !important;
+}
+
+textarea:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+button:hover {
+  border: none;
+}
+table {
+  width: 100%;
+}
+
+*::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  color: #9ba2ab;
+}
+
+*::-moz-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  color: #9ba2ab;
+}
+::selection {
+  color: #ffffff;
+  background: #e65c6a;
+}
+::-moz-selection {
+  color: #ffffff;
+  background: #e65c6a;
+}
+
+// Hide input number type right icon
+
+/*  Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/* Common Class Utilities */
+.d-flex {
+  display: flex;
+}
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.align-items-start {
+  align-items: start;
+}
+.align-items-center {
+  align-items: center;
+}
+.flex-wrap-wrap {
+  flex-wrap: wrap;
+}
+.g-sm {
+  gap: 7px 12px;
+}
+.g-lg {
+  gap: 15px 20px;
+}
+.d-none {
+  display: none;
+}
+.text-center {
+  text-align: center;
+}
+.text-end {
+  text-align: end;
+}
+.position-relative {
+  position: relative;
+}
+
+
+/* ====================== Header Section ====================== */
+.header_wrapper{
+  padding-top: 50px;
+  .log_nav_area{
+    gap: 10px 65px;
+  }
+  nav{
+    ul{
+      gap: 10px 50px;
+    }
+  }
+}
+/* ====================== Section ====================== */
+/* ====================== Section ====================== */
+/* ====================== Section ====================== */
+/* ====================== Section ====================== */
+/* ====================== Section ====================== */

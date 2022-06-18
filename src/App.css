@@ -1,0 +1,344 @@
+/*
+!Utilities Or Helper CSS
+*/
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Fonts */
+/* Variable */
+/* Mixin Extends */
+/* Hover Transistion */
+/* Custom scroll Bar */
+/* Custom Table scroll Bar */
+/* Custom scroll Bar Inner */
+/* ============ Layout =============== */
+.my-container {
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media all and (min-width: 1400px) {
+  .my-container {
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .my-container {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .my-container {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .my-container {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 575px) and (max-width: 767px) {
+  .my-container {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    max-width: 540px;
+  }
+}
+
+@media all and (max-width: 575px) {
+  .my-container {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    max-width: 100%;
+  }
+}
+
+/* Common CSS */
+body {
+  color: white;
+  background-color: #040C18;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Manrope", sans-serif;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #424c60;
+}
+
+@media all and (max-width: 767px) {
+  p {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    font-size: 14px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+:focus {
+  outline: none !important;
+}
+
+input:focus,
+select:focus {
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border: 2px solid #2d9cdb !important;
+}
+
+textarea:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  outline: none !important;
+}
+
+.btn:focus {
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+button:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+button:hover {
+  border: none;
+}
+
+table {
+  width: 100%;
+}
+
+*::-webkit-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  color: #9ba2ab;
+}
+
+*:-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  color: #9ba2ab;
+}
+
+*::-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  color: #9ba2ab;
+}
+
+*::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  color: #9ba2ab;
+}
+
+*::-moz-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  color: #9ba2ab;
+}
+
+::-moz-selection {
+  color: #ffffff;
+  background: #e65c6a;
+}
+
+::selection {
+  color: #ffffff;
+  background: #e65c6a;
+}
+
+::-moz-selection {
+  color: #ffffff;
+  background: #e65c6a;
+}
+
+/*  Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Common Class Utilities */
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.justify-content-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.justify-content-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.justify-content-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.align-items-start {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.align-items-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-wrap-wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.g-sm {
+  gap: 7px 12px;
+}
+
+.g-lg {
+  gap: 15px 20px;
+}
+
+.d-none {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.position-relative {
+  position: relative;
+}
+
+/* ====================== Header Section ====================== */
+.header_wrapper {
+  padding-top: 50px;
+}
+
+.header_wrapper .log_nav_area {
+  gap: 10px 65px;
+}
+
+.header_wrapper nav ul {
+  gap: 10px 50px;
+}
+
+/* ====================== Section ====================== */
+/* ====================== Section ====================== */
+/* ====================== Section ====================== */
+/* ====================== Section ====================== */
+/* ====================== Section ====================== */
+/*# sourceMappingURL=App.css.map */
