@@ -5,6 +5,7 @@ function Home() {
   return (
     <div>
         <Header />
+        <h3 style={{marginTop:"200px"}}>Test</h3>
     </div>
   )
 }
