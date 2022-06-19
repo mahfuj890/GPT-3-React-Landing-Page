@@ -190,13 +190,10 @@ h5 {
   font-family: $primary-font;
 }
 p {
+  font-weight: 500;
   font-size: 16px;
-  font-weight: 400;
-  line-height: 22px;
-  color: #424c60;
-  @include max-media-width(767) {
-    font-size: 14px;
-  }
+  line-height: 28px;
+  color: #81afdd;
 }
 
 h1,
@@ -234,12 +231,17 @@ li {
 :focus {
   outline: none !important;
 }
+input,
+textarea {
+  font-size: 20px;
+  color: white;
+}
 
 input:focus,
 select:focus {
   outline: none !important;
   box-shadow: none !important;
-  border: 2px solid #2d9cdb !important;
+  border: 1px solid #ff4820 !important;
 }
 
 textarea:focus {
@@ -258,6 +260,7 @@ button:focus {
 }
 
 button {
+  color: white;
   cursor: pointer;
   border: none;
   background-color: transparent;
@@ -272,16 +275,20 @@ table {
 
 *::placeholder {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 160%;
-  color: #9ba2ab;
+  font-size: 20px;
+  color: #3d6184;
+  @include max-media-width(991) {
+    font-size: 16px;
+  }
 }
 
 *::-moz-placeholder {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 160%;
-  color: #9ba2ab;
+  font-size: 20px;
+  color: #3d6184;
+  @include max-media-width(991) {
+    font-size: 16px;
+  }
 }
 ::selection {
   color: #ffffff;
@@ -413,14 +420,13 @@ input[type="number"] {
         opacity: 1;
         visibility: visible;
       }
-      .header_btn{
-
+      .header_btn {
         @include max-media-width(991) {
-        display:block !important;
+          display: block !important;
         }
       }
     }
-    .header_btn{
+    .header_btn {
       display: none;
     }
     @include max-media-width(575) {
@@ -452,7 +458,12 @@ input[type="number"] {
       }
     }
   }
-
+  .toggle_list {
+    display: none;
+    @include max-media-width(991) {
+      display: block;
+    }
+  }
   .show_icon {
     display: block;
   }
@@ -465,7 +476,123 @@ input[type="number"] {
     }
   }
 }
-/* ====================== Section ====================== */
+/* ====================== Hero Section ====================== */
+.hero_wrapper {
+  .hero_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 20px 30px;
+    @include max-media-width(767) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  .hero_content {
+    @include media-break-width(768, 991) {
+      margin-top: 50px;
+    }
+    @include min-media-width(992) {
+      margin-top: 100px;
+    }
+    h1 {
+      font-weight: 800;
+      font-size: 62px;
+      line-height: 75px;
+      letter-spacing: -0.04em;
+      background: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      @include media-break-width(992, 1199) {
+        font-size: 45px;
+        line-height: 52px;
+      }
+      @include media-break-width(768, 991) {
+        font-size: 34px;
+        line-height: 42px;
+      }
+      @include max-media-width(767) {
+        font-size: 32px;
+        line-height: 42px;
+      }
+    }
+    & > p {
+      margin: 30px 0;
+      @include media-break-width(768, 991) {
+        margin: 20px 0;
+      }
+      @include max-media-width(767) {
+        margin: 15px 0;
+      }
+      @include min-media-width(1200) {
+        width: 80%;
+      }
+    }
+  }
+  .hero_form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 170px);
+    height: 70px;
+    border: 1px solid #052d56;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    @include max-media-width(991) {
+      grid-template-columns: minmax(0, 1fr);
+      height: auto;
+    }
+    input {
+      padding: 0 10px 0 30px;
+      width: 100%;
+      border: 1px solid #052d56;
+      background: #052d56;
+      border-radius: 5px 0px 0px 5px;
+      @include max-media-width(991) {
+        padding-left: 20px;
+        height: 50px;
+        border-bottom-left-radius: 0;
+      }
+    }
+    .default_btn {
+      font-weight: 700;
+      font-size: 20px;
+      color: #ffffff;
+      padding: 0;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -ms-border-radius: 0;
+      -o-border-radius: 0;
+      -webkit-border-radius: 0;
+      border: 1px solid #ff4820;
+      @include max-media-width(991) {
+        font-weight: 500;
+        font-size: 16px;
+        height: 45px;
+      }
+    }
+  }
+  .hero_people_area {
+    margin-top: 20px;
+    p {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 38px;
+      color: #ffffff;
+    }
+  }
+  .hero_img {
+    @include max-media-width(767) {
+      grid-row: 1;
+      margin-top: 30px;
+    }
+    img {
+      max-height: 700px;
+    }
+  }
+}
 /* ====================== Section ====================== */
 /* ====================== Section ====================== */
 /* ====================== Section ====================== */
