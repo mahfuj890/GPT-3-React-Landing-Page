@@ -7,7 +7,7 @@ function HeroSection() {
       <div className="my-container">
         <div className="hero_grid">
           <div className="hero_content">
-            <h1>Let’s Build Something amazing with GPT-3 OpenAI</h1>
+            <h1 className="hero_title">Let’s Build Something amazing with GPT-3 OpenAI</h1>
             <p>
               Yet bed any for travelling assistance indulgence unpleasing. Not
               thoughts all exercise blessing. Indulgence way everything joy

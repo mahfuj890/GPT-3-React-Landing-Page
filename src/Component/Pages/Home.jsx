@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../Layout/Header';
 import About from '../Sections/About';
+import BlogSection from '../Sections/BlogSection';
 import BrandSection from '../Sections/BrandSection';
 import CTASection from '../Sections/CTASection';
 import FeaturesSection from '../Sections/FeaturesSection';
@@ -17,6 +18,7 @@ function Home() {
         <FeaturesSection />
         <PossibilitySection />
         <CTASection />
+        <BlogSection />
         <h3 style={{marginTop:"200px"}}>Test</h3>
     </div>
   )
