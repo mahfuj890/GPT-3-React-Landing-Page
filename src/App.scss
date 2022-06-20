@@ -235,6 +235,12 @@ input,
 textarea {
   font-size: 20px;
   color: white;
+  @include media-break-width(768, 991) {
+    font-size: 18px;
+  }
+  @include max-media-width(767) {
+    font-size: 16px;
+  }
 }
 
 input:focus,
@@ -277,7 +283,10 @@ table {
   font-weight: 400;
   font-size: 20px;
   color: #3d6184;
-  @include max-media-width(991) {
+  @include media-break-width(768, 991) {
+    font-size: 18px;
+  }
+  @include max-media-width(767) {
     font-size: 16px;
   }
 }
@@ -286,7 +295,10 @@ table {
   font-weight: 400;
   font-size: 20px;
   color: #3d6184;
-  @include max-media-width(991) {
+  @include media-break-width(768, 991) {
+    font-size: 18px;
+  }
+  @include max-media-width(767) {
     font-size: 16px;
   }
 }
@@ -412,6 +424,18 @@ input[type="number"] {
       height: 3px;
       background: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%),
         #ffffff;
+    }
+  }
+  &.features_titlie {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+    padding: 10px 0;
+    @include max-media-width(767) {
+      font-size: 16px;
+      line-height: 26px;
     }
   }
 }
@@ -725,7 +749,6 @@ input[type="number"] {
     }
   }
   .about_slider_area {
-
     margin-top: 90px;
     @include media-break-width(768, 991) {
       margin-top: 60px;
@@ -753,7 +776,6 @@ input[type="number"] {
       height: 12px;
       background-color: #227cd7;
     }
-
   }
   .slider_button_area {
     margin-top: 10px;
@@ -771,7 +793,7 @@ input[type="number"] {
       @include hover-transition();
       @include max-media-width(767) {
         width: 30px;
-      height: 30px;
+        height: 30px;
       }
 
       &:hover {
@@ -796,5 +818,73 @@ input[type="number"] {
     filter: blur(200px);
   }
 }
+/* ====================== Features Section ====================== */
+.features_wrapper {
+  margin-top: 200px;
+  @include media-break-width(768, 991) {
+    margin-top: 120px;
+  }
+  @include max-media-width(767) {
+    margin-top: 70px;
+  }
+  .features_title_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 50px 130px;
+    @include media-break-width(768, 1199) {
+      gap: 50px 50px;
+    }
+    @include max-media-width(767) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+  .features_left_content {
+    h3 {
+      font-weight: 800;
+      font-size: 34px;
+      line-height: 45px;
+      background: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%),
+        #ffffff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      @include media-break-width(768, 991) {
+        font-size: 28px;
+        line-height: 38px;
+      }
+      @include max-media-width(767) {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+    h5 {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 30px;
+      color: #ff8a71;
+      margin-top: 30px;
+      @include max-media-width(767) {
+        font-size: 14px;
+        line-height: 24px;
+        margin-top: 20px;
+      }
+    }
+  }
+  .features_item_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 180px) repeat(1, minmax(0, 1fr));
+    align-items: start;
+    gap: 10px 50px;
+    margin-bottom: 30px;
+    @include media-break-width(768, 1199) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    @include max-media-width(575) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+}
+/* ====================== Section ====================== */
 /* ====================== Section ====================== */
 /* ====================== Section ====================== */
