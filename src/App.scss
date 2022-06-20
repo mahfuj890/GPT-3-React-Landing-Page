@@ -885,6 +885,70 @@ input[type="number"] {
     }
   }
 }
-/* ====================== Section ====================== */
+/* ====================== Possibility Section ====================== */
+.possibility_wrapper {
+  margin-top: 50px;
+  .possibility_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: end;
+    gap: 30px 30px;
+    @include media-break-width(768, 991) {
+      align-items: start;
+    }
+    @include max-media-width(767) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+  .possibility_content {
+    max-width: 480px;
+    width: 100%;
+    margin-bottom: 20px;
+    h4 {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 30px;
+      color: #71e5ff;
+    }
+    h3 {
+      font-weight: 800;
+      font-size: 34px;
+      line-height: 45px;
+      margin-top: 10px;
+      padding-right: 18px;
+      background: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%),
+        #ffffff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      @include media-break-width(768, 991) {
+        font-size: 28px;
+        line-height: 38px;
+        padding-right: 10px;
+      }
+      @include max-media-width(767) {
+        font-size: 24px;
+        line-height: 32px;
+        padding-right: 0;
+      }
+    }
+    p {
+      margin-top: 20px;
+      @include max-media-width(767) {
+        margin-top: 10px;
+      }
+    }
+    h5 {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 30px;
+      color: #ff8a71;
+      margin-top: 30px;
+      @include max-media-width(767) {
+        margin-top: 20px;
+      }
+    }
+  }
+}
 /* ====================== Section ====================== */
 /* ====================== Section ====================== */

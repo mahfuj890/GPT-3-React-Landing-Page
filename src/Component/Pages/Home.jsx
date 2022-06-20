@@ -4,6 +4,7 @@ import About from '../Sections/About';
 import BrandSection from '../Sections/BrandSection';
 import FeaturesSection from '../Sections/FeaturesSection';
 import HeroSection from '../Sections/HeroSection';
+import PossibilitySection from '../Sections/PossibilitySection';
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         <BrandSection />
         <About />
         <FeaturesSection />
+        <PossibilitySection />
         <h3 style={{marginTop:"200px"}}>Test</h3>
     </div>
   )
