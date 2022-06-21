@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Layout/Footer';
 import Header from '../Layout/Header';
 import About from '../Sections/About';
 import BlogSection from '../Sections/BlogSection';
@@ -19,7 +20,8 @@ function Home() {
         <PossibilitySection />
         <CTASection />
         <BlogSection />
-        <h3 style={{marginTop:"200px"}}>Test</h3>
+        <Footer />
+     
     </div>
   )
 }
