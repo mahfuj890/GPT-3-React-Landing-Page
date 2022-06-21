@@ -466,6 +466,7 @@ input[type="number"] {
 /* ====================== Header Section ====================== */
 .header_wrapper {
   padding-top: 50px;
+  @include hover-transition();
   @include max-media-width(991) {
     padding-top: 30px;
   }
@@ -552,7 +553,19 @@ input[type="number"] {
       display: none;
     }
   }
+
+  &.fixed_header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 150;
+    padding: 16px 0;
+    background-color: #042c54;
+  }
 }
+
+
 /* ====================== Hero Section ====================== */
 .hero_wrapper {
   .hero_grid {

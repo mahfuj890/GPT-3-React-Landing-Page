@@ -26,10 +26,19 @@ const menuList = [
   },
 ];
 function Header() {
+  const [stickyHeader, setstickyHeader] = useState(false);
   const [toggleMenu, settoggleMenu] = useState(false);
-
+  const stickyNavbar = ()=>{
+    if(window.scrollY >= 50){
+      setstickyHeader(true);
+    }
+    else{
+      setstickyHeader(false)
+    }
+  }
+window.addEventListener("scroll",stickyNavbar)
   return (
-    <header className="header_wrapper">
+    <header className={`header_wrapper ${stickyHeader? "fixed_header" :" "  }`}>
       <div className="my-container">
         <div className="header_area d-flex align-items-center justify-content-between g-sm">
           <div className="log_nav_area d-flex align-items-center justify-content-between ">

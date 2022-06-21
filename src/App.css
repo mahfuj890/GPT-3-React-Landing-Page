@@ -541,6 +541,11 @@ input[type="number"] {
 /* ====================== Header Section ====================== */
 .header_wrapper {
   padding-top: 50px;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
 
 @media all and (max-width: 991px) {
@@ -681,6 +686,16 @@ input[type="number"] {
     transition: 0.5s;
     display: none;
   }
+}
+
+.header_wrapper.fixed_header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 150;
+  padding: 16px 0;
+  background-color: #042c54;
 }
 
 /* ====================== Hero Section ====================== */
