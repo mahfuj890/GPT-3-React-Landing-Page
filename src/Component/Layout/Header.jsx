@@ -3,6 +3,7 @@ import Button from "../Button/Button";
 import { RiMenu3Line } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
+import useBodyScrollLock from "../Hooks/useBodyScrollLock";
 const menuList = [
   {
     label: "Home",
@@ -28,17 +29,27 @@ const menuList = [
 function Header() {
   const [stickyHeader, setstickyHeader] = useState(false);
   const [toggleMenu, settoggleMenu] = useState(false);
-  const stickyNavbar = ()=>{
-    if(window.scrollY >= 50){
+  const [isLocked, toggleScroll] = useBodyScrollLock();
+  const stickyNavbar = () => {
+    if (window.scrollY >= 50) {
       setstickyHeader(true);
+    } else {
+      setstickyHeader(false);
     }
-    else{
-      setstickyHeader(false)
-    }
-  }
-window.addEventListener("scroll",stickyNavbar)
+  };
+  window.addEventListener("scroll", stickyNavbar);
+
+  //Hide Show button
+  const showNavbar = () => {
+    settoggleMenu(true);
+    toggleScroll();
+  };
+  const hideNavbar = () => {
+    settoggleMenu(false);
+    toggleScroll();
+  };
   return (
-    <header className={`header_wrapper ${stickyHeader? "fixed_header" :" "  }`}>
+    <header className={`header_wrapper ${stickyHeader ? "fixed_header" : " "}`}>
       <div className="my-container">
         <div className="header_area d-flex align-items-center justify-content-between g-sm">
           <div className="log_nav_area d-flex align-items-center justify-content-between ">
@@ -74,12 +85,12 @@ window.addEventListener("scroll",stickyNavbar)
               <li className="toggle_list">
                 <RiMenu3Line
                   size={27}
-                  onClick={() => settoggleMenu(true)}
+                  onClick={showNavbar}
                   className={`${toggleMenu ? "hide_icon" : "show_icon"}`}
                 />
                 <AiOutlineClose
                   size={27}
-                  onClick={() => settoggleMenu(false)}
+                  onClick={hideNavbar}
                   className={`${toggleMenu ? "show_icon" : "hide_icon"}`}
                 />
               </li>
